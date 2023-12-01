@@ -36,7 +36,7 @@ foreach (Member member in library.Members)
 
 // Lend books
 library.LendBook(book1, member1);
-library.LendBook(book2, member2);
+library.LendBook(book2, member2, true);
 library.LendBook(book3, member2);
 
 // Display books after lending
@@ -49,6 +49,7 @@ foreach (Book book in library.Books)
 // Return books
 library.ReturnBook(book1, member1);
 library.ReturnBook(book2, member1);
+library.ReturnBook(book2, member2, 15);
 
 // Display books after returning
 Console.WriteLine("Books after returning:");

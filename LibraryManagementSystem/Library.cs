@@ -50,6 +50,28 @@
             }
         }
 
+        public void LendBook(Book book, Member member, bool isLongTerm)
+        {
+            if (isLongTerm)
+            {
+                if (books.Contains(book))
+                {
+                    books.Remove(book);
+                    member.BorrowedBooks.Add(book);
+                    Console.WriteLine($"Book '{book.Name}' borrowed for long term by {member.FirstName} {member.LastName}.");
+                }
+                else
+                {
+                    Console.WriteLine($"Book '{book.Name}' not available in the library for lending.");
+                }
+            }
+            else
+            {
+                // Implement short-term borrowing logic
+                LendBook(book, member); // Call the existing BorrowBook method for short-term borrowing
+            }
+        }
+
         // Method to return a book to the library
         public void ReturnBook(Book book, Member member)
         {
@@ -58,6 +80,28 @@
                 member.BorrowedBooks.Remove(book);
                 books.Add(book);
                 Console.WriteLine($"Book '{book.Name}' returned by {member.FirstName} {member.LastName}.");
+            }
+            else
+            {
+                Console.WriteLine($"Book '{book.Name}' not borrowed by {member.FirstName} {member.LastName}.");
+            }
+        }
+
+        public void ReturnBook(Book book, Member member, int lateDays)
+        {
+            if (member.BorrowedBooks.Contains(book))
+            {
+                member.BorrowedBooks.Remove(book);
+                books.Add(book);
+
+                if (lateDays > 14)
+                {
+                    Console.WriteLine($"Book '{book.Name}' returned late by {member.FirstName} {member.LastName}.");
+                }
+                else
+                {
+                    Console.WriteLine($"Book '{book.Name}' returned by {member.FirstName} {member.LastName}.");
+                }
             }
             else
             {
