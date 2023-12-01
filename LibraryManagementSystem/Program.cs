@@ -1,9 +1,9 @@
 ﻿using LibraryManagementSystem;
 
 // Create books
-Book book1 = new Book("The Hobbit", "J.R.R. Tolkien", 1937, 1);
-Book book2 = new Book("To Kill a Mockingbird", "Harper Lee", 1960, 2);
-Book book3 = new Book("1984", "George Orwell", 1949, 3);
+Book book1 = new Book("The Hobbit", "J.R.R. Tolkien", 1937, 1, "Fantasy");
+Book book2 = new Book("To Kill a Mockingbird", "Harper Lee", 1960, 2, "Southern Gothic");
+Book book3 = new Book("1984", "George Orwell", 1949, 3, "Dystopia");
 
 // Create members
 Member member1 = new Member("John", "Doe", 101);
