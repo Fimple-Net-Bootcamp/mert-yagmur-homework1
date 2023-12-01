@@ -23,13 +23,13 @@ library.AddMember(member2);
 // Display library information
 Console.WriteLine("Library Information:");
 Console.WriteLine("Books:");
-foreach (Book book in library.books)
+foreach (Book book in library.Books)
 {
     Console.WriteLine($"  {book.Name} by {book.Author} ({book.Year}), ID: {book.Id}");
 }
 
 Console.WriteLine("Members:");
-foreach (Member member in library.members)
+foreach (Member member in library.Members)
 {
     Console.WriteLine($"  {member.FirstName} {member.LastName} (ID: {member.MembershipId})");
 }
@@ -41,7 +41,7 @@ library.LendBook(book3, member2);
 
 // Display books after lending
 Console.WriteLine("Books after lending:");
-foreach (Book book in library.books)
+foreach (Book book in library.Books)
 {
     Console.WriteLine($"  {book.Name} by {book.Author} ({book.Year}), ID: {book.Id}");
 }
@@ -52,7 +52,7 @@ library.ReturnBook(book2, member1);
 
 // Display books after returning
 Console.WriteLine("Books after returning:");
-foreach (Book book in library.books)
+foreach (Book book in library.Books)
 {
     Console.WriteLine($"  {book.Name} by {book.Author} ({book.Year}), ID: {book.Id}");
 }

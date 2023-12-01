@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LibraryManagementSystem
+﻿namespace LibraryManagementSystem
 {
     public class Member
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int MembershipId { get; set; }
-        public List<Book> BorrowedBooks { get; set; }
+        private string firstName;
+        private string lastName;
+        private int membershipId;
+        private List<Book> borrowedBooks;
+
+        public string FirstName { get => firstName; private set => firstName = value; }
+        public string LastName { get => lastName; private set => lastName = value; }
+        public int MembershipId { get => membershipId; private set => membershipId = value; }
+        public List<Book> BorrowedBooks { get => borrowedBooks; private set => borrowedBooks = value; }
 
         public Member(string firstName, string lastName, int membershipId)
         {

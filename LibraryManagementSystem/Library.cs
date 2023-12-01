@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Reflection.Metadata.BlobBuilder;
-
-namespace LibraryManagementSystem
+﻿namespace LibraryManagementSystem
 {
     public class Library
     {
-        public List<Book> books;
-        public List<Member> members;
+        private List<Book> books;
+        private List<Member> members;
 
         public Library()
         {
             books = new List<Book>();
             members = new List<Member>();
         }
+
+        public List<Book> Books => books;
+        public List<Member> Members => members;
 
         // Method to add a book to the library
         public void AddBook(Book book)
