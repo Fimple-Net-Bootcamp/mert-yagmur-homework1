@@ -1,6 +1,6 @@
 ﻿namespace LibraryManagementSystem
 {
-    public class Member
+    public class Member : IPrintable
     {
         private string firstName;
         private string lastName;
@@ -18,6 +18,11 @@
             LastName = lastName;
             MembershipId = membershipId;
             BorrowedBooks = new List<Book>();
+        }
+
+        public void PrintInfo()
+        {
+            Console.WriteLine($"{FirstName} {LastName} | (ID: {MembershipId}) | Borrowed Books: {string.Join(", ", BorrowedBooks.Select(book => book.Name))}");
         }
     }
 }
